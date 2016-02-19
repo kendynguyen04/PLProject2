@@ -25,45 +25,33 @@ public class PersonApp {
 
             System.out.print("Create customer or employee? (c/e): ");
             String appChoice = sc.nextLine();
+            Console cs = new Console();
 
             if(appChoice.equalsIgnoreCase("c")) {
 
                 Customer cust = new Customer();
-                System.out.print("Enter first name: ");
-                String first = sc.nextLine();
-                cust.setFirstName(first);
-                System.out.print("Enter last name: ");
-                String last = sc.nextLine();
-                cust.setLastName(last);
-                System.out.print("Enter email address: ");
-                String email = sc.nextLine();
-                cust.setEmailAddress(email);
-                System.out.print("Customer number: ");
-                String custNumber = sc.nextLine();
-                cust.setCustomerNumber(custNumber);
+                cust.setFirstName(cs.getString("Enter first name: "));
+                cust.setLastName(cs.getString("Enter last name: "));
+                cust.setEmailAddress(cs.getString("Enter email address: "));
+                cust.setCustomerNumber(cs.getString("Customer number: "));
                 Person per = cust;
+                System.out.println();
                 print(per);
 
             } else if(appChoice.equalsIgnoreCase("e")) {
 
                 Employee emp = new Employee();
-                System.out.print("Enter first name: ");
-                String first = sc.nextLine();
-                emp.setFirstName(first);
-                System.out.print("Enter last name: ");
-                String last = sc.nextLine();
-                emp.setLastName(last);
-                System.out.print("Enter email address: ");
-                String email = sc.nextLine();
-                emp.setEmailAddress(email);
-                System.out.print("Social security number: ");
-                String socialnum = sc.nextLine();
-                emp.setSNumber(socialnum);
+                emp.setFirstName(cs.getString("Enter first name: "));
+                emp.setLastName(cs.getString("Enter last name: "));
+                emp.setEmailAddress(cs.getString("Enter email address: "));
+                emp.setSNumber(cs.getString("Social security number: "));
                 Person per = emp;
+                System.out.println();
                 print(per);
 
             }
 
+            System.out.println();
             System.out.println();
             System.out.print("Continue? (y/n): ");
             choice = sc.nextLine();
