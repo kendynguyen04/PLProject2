@@ -23,7 +23,7 @@ public class PersonApp {
         String choice = "y";
         while (choice.equalsIgnoreCase("y")) {
 
-            System.out.print("Create customer or employee? (c/e):");
+            System.out.print("Create customer or employee? (c/e): ");
             String appChoice = sc.nextLine();
 
             if(appChoice.equalsIgnoreCase("c")) {
@@ -42,6 +42,7 @@ public class PersonApp {
                 String custNumber = sc.nextLine();
                 cust.setCustomerNumber(custNumber);
                 Person per = cust;
+                print(per);
 
             } else if(appChoice.equalsIgnoreCase("e")) {
 
@@ -55,15 +56,15 @@ public class PersonApp {
                 System.out.print("Enter email address: ");
                 String email = sc.nextLine();
                 emp.setEmailAddress(email);
-                System.out.print("Social security number:");
+                System.out.print("Social security number: ");
                 String socialnum = sc.nextLine();
                 emp.setSNumber(socialnum);
                 Person per = emp;
+                print(per);
 
             }
 
-            print(per);
-
+            System.out.println();
             System.out.print("Continue? (y/n): ");
             choice = sc.nextLine();
             System.out.println();
